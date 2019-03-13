@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Python Team - APSSDC</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--{{ url_for('static', filename='style.css') }}-->
+        <!--{{ url_for('static', filename='css/normalize.css') }}-->
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/templatemo-style.css') }}">
+        <script src="{{ url_for('static',filename='js/vendor/modernizr-2.6.2.min.js') }}"></script>
+        <!--
+        Masonry Template
+        http://www.templatemo.com/preview/templatemo_434_masonry
+        -->
+    </head>
+    <body>
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+        </div>
+
+        <div class="content-bg"></div>
+        <div class="bg-overlay"></div>
+
+        <!-- SITE TOP -->
+        <div class="site-top">
+            <div class="site-header clearfix">
+                <div class="container">
+                    <a href="#" class="site-brand pull-left"><strong>Python</strong> Team</a>
+                </div>
+            </div> <!-- .site-header -->
+        </div> <!-- .site-top -->
+
+        <!-- MAIN POSTS -->
+        <div class="main-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="blog-masonry masonry-true">
+                     {% for trainer in trainers %}
+                        <div class="post-masonry col-md-4 col-sm-6">
+                            <div class="post-thumb">
+
+                                <img src="{{ trainer[0] }}" alt="">
+                                <div class="title-over">
+                                    <h4><a href="#">{{ trainer[1] }}</a></h4>
+                                </div>
+                                <div class="post-hover text-center">
+                                    <div class="inside">
+                                        <i class="fa fa-plus"></i>
+                                        <h4><a href="#">{{ trainer[1] }}</a></h4>
+                                        <p>{{ trainer[2] }}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- /.post-masonry -->
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="copyright-text">Copyright &copy; 2019
+                        <a rel="nofollow" href="http://engineering.apssdc.in">APSSDC</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="{{ url_for('static', filename='js/vendor/jquery-1.10.2.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/min/plugins.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/min/main.min.js') }}"></script>
+
+        <!-- Preloader -->
+        <script type="text/javascript">
+            //<![CDATA[
+            $(window).load(function() { // makes sure the whole site is loaded
+                $('#loader').fadeOut(); // will first fade out the loading animation
+                    $('#loader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(350).css({'overflow-y':'visible'});
+            })
+            //]]>
+        </script>
+	<!-- templatemo 434 masonry -->
+    </body>
+</html>
